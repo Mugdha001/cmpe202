@@ -33,7 +33,7 @@ public class GumballMachine
         case 5:  this.has_nickel =true;
                  this.coin_value = this.coin_value + 5;
                  break;
-        default: System.out.println("Coin denomination not accepted. Insert a valid denomination.");
+        default: //System.out.println("Coin denomination not accepted. Insert a valid denomination.");
                  break;
     }        
     }  
@@ -61,7 +61,7 @@ public class GumballMachine
         }  
         break;
         case 2:
-         if(this.has_quarter && this.coin_value>=50){
+        if(this.has_quarter && this.coin_value>=50){
             if ( this.num_gumballs > 0 )
             {
                 this.num_gumballs-- ;
@@ -75,11 +75,11 @@ public class GumballMachine
         }
         else 
         {
-            System.out.println( "Please insert a quarter" ) ;
+                System.out.println( "Please insert a quarter" ) ;
         }  
         break;
         case 3:
-         if((this.has_quarter || this.has_nickel || this.has_dime) && this.coin_value>=50){
+         if(this.coin_value>=50){
             if ( this.num_gumballs > 0 )
             {
                 this.num_gumballs-- ;
@@ -95,7 +95,7 @@ public class GumballMachine
         }
         else 
         {
-            System.out.println( "Please insert more coins" ) ;
+            System.out.println( "Please insert more coins." ) ;
         }  
         break;
         default: System.out.println("We currently have only 3 machines. Select the right machine");
