@@ -9,13 +9,13 @@ public class HasSufficientCoinState implements State {
 		this.gumballMachine = gumballMachine;
 	}
   
-	public void insertCoin() {
+	public void insertCoin(int coin_in) {
 		System.out.println("You can't insert another coin");
 	}
  
 	public void ejectCoin() {
 		System.out.println("coin returned");
-		gumballMachine.setState(gumballMachine.getNoQuarterState());
+		gumballMachine.setState(gumballMachine.getNoSufficientCoinState());
 	}
  
 	public void turnCrank() {

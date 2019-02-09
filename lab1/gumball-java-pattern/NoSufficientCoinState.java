@@ -7,17 +7,37 @@ public class NoSufficientCoinState implements State {
         this.gumballMachine = gumballMachine;
     }
  
-	public void insertCoin() {
-		System.out.println("You inserted a coin");
-		gumballMachine.setState(gumballMachine.getHasQuarterState());
-	}
+    public void insertCoin(int coin_in) {
+        System.out.println("Inserting coin");
+        int machinetype = gumballMachine.getMachineType();
+        boolean checkCoinCompatibility= false;
+            switch(machinetype)
+        {
+            case 1 : checkCoinCompatibility = (coin_in==25); break;
+            case 2 : checkCoinCompatibility = (coin_in==25); break;
+            case 3 : checkCoinCompatibility = (coin_in==25 || coin_in ==5 || coin_in ==10); break;
+        }
+        if(checkCoinCompatibility){
+            gumballMachine.setCoinValue(coin_in);
+            if( gumballMachine.getCoinValue() >= gumballMachine.getGumballValue() )         
+            gumballMachine.setState(gumballMachine.getHasSufficientCoinState());
+        }
+        
+        else
+            if(gumballMachine.getCoinValue() > 0)
+		{
+			System.out.println("Ejecting "+gumballMachine.getCoinValue()+" cents");
+			gumballMachine.resetCoinValue(0);
+		}
+    }
+    
  
-	public void ejectCoin() {
-		System.out.println("You haven't inserted a quarter");
-	}
+    public void ejectCoin() {
+        System.out.println("You haven't inserted a coin");
+    }
  
 	public void turnCrank() {
-		System.out.println("You turned, but there's no quarter");
+		System.out.println("You turned, but coin value is insufficient");
 	 }
  
 	public void dispense() {
@@ -25,6 +45,6 @@ public class NoSufficientCoinState implements State {
 	} 
  
 	public String toString() {
-		return "waiting for quarter";
+		return "waiting for coin";
 	}
 }
