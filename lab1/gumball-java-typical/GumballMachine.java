@@ -7,8 +7,7 @@ public class GumballMachine
     private boolean has_nickel;
     private boolean has_dime;
     private int coin_value;
-    private int machine;
-    
+    private int machine;   
 
     public GumballMachine(int size, int machine_no)
     {
@@ -17,8 +16,7 @@ public class GumballMachine
         this.has_quarter = false;
         this.has_dime = false;
         this.has_nickel = false;
-        this.machine = machine_no;
-        
+        this.machine = machine_no;       
         
     }
 
@@ -66,16 +64,19 @@ public class GumballMachine
             {
                 this.num_gumballs-- ;
                 this.has_quarter = false ;
-                System.out.println( "Thanks for your quarter.  Gumball Ejected!" ) ;
+                System.out.println( "Thanks for your quarters.  Gumball Ejected!" ) ;
+                this.coin_value=0;
             }
             else
             {
-                System.out.println( "No More Gumballs!  Sorry, can't return your quarter." ) ;
+                System.out.println( "No More Gumballs!  Sorry, can't return your quarters." ) ;
             }
         }
         else 
         {
                 System.out.println( "Please insert a quarter" ) ;
+                System.out.println( "Current Money in gumball is "+this.coin_value+" cents" ) ;
+            
         }  
         break;
         case 3:
@@ -86,16 +87,18 @@ public class GumballMachine
                 this.has_quarter = false ;
                 this.has_nickel = false;
                 this.has_dime = false;
-                System.out.println( "Thanks for your coins.  Gumball Ejected!" ) ;
+                System.out.println( "Thanks for your coin/s.  Gumball Ejected!" ) ;
             }
             else
             {
-                System.out.println( "No More Gumballs!  Sorry, can't return your coins." ) ;
+                System.out.println( "No More Gumballs!  Sorry, can't return your coin/s." ) ;
             }
         }
         else 
         {
             System.out.println( "Please insert more coins." ) ;
+            System.out.println( "Current Money in gumball is "+this.coin_value+" cents" ) ;
+            System.out.println( "Please insert more coins to make it 50 cents." ) ;
         }  
         break;
         default: System.out.println("We currently have only 3 machines. Select the right machine");
