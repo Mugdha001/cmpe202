@@ -21,6 +21,7 @@ public class NoSufficientCoinState implements State {
             gumballMachine.setCoinValue(coin_in);
             if( gumballMachine.getCoinValue() >= gumballMachine.getGumballValue() )         
             gumballMachine.setState(gumballMachine.getHasSufficientCoinState());
+            
         }
         
         else

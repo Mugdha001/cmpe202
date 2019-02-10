@@ -15,16 +15,18 @@ public class HasSufficientCoinState implements State {
  
     public void ejectCoin() {
         System.out.println("coins returned");
-        gumballMachine.setState(gumballMachine.getNoSufficientCoinState());
         System.out.println("Ejecting "+gumballMachine.getCoinValue()+" cents");
-        gumballMachine.resetCoinValue(0);
+        gumballMachine.resetCoinValue(0);        
+        gumballMachine.setState(gumballMachine.getNoSufficientCoinState());
         
     }
  
     public void turnCrank() {
         System.out.println("You turned...");
         gumballMachine.setState(gumballMachine.getSoldState());
-        gumballMachine.ejectCoin();
+        gumballMachine.resetCoinValue(0); 
+        System.out.println("Ejecting remaining cents if any");
+        //gumballMachine.ejectCoin();
     }
 
     public void dispense() {
