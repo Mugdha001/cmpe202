@@ -24,27 +24,26 @@ public class NoSufficientCoinState implements State {
         }
         
         else
-            if(gumballMachine.getCoinValue() > 0)
-		{
-			System.out.println("Ejecting "+gumballMachine.getCoinValue()+" cents");
-			gumballMachine.resetCoinValue(0);
-		}
+        {
+            System.out.println("Invalid Coin Type");
+        }
     }
     
  
     public void ejectCoin() {
-        System.out.println("You haven't inserted a coin");
+        System.out.println("Ejecting "+gumballMachine.getCoinValue()+" cents");
+        gumballMachine.resetCoinValue(0);
     }
  
-	public void turnCrank() {
-		System.out.println("You turned, but coin value is insufficient");
-	 }
+    public void turnCrank() {
+        System.out.println("You turned, but coin value is insufficient");
+     }
  
-	public void dispense() {
-		System.out.println("You need to pay first");
-	} 
+    public void dispense() {
+        System.out.println("You need to pay first");
+    } 
  
-	public String toString() {
-		return "waiting for coin";
-	}
+    public String toString() {
+        return "waiting for coin";
+    }
 }
