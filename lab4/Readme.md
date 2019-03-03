@@ -23,9 +23,7 @@ Be able to send and receive Messages
 
 Confirm or leave - messages
 
-Collaborators:
-
-ReservationHandler
+Collaborators: ReservationHandler
 
 
 Class: ReservationHandler
@@ -38,11 +36,7 @@ Maintain direct contact with customers
 
 Send and receive message to/from customer
 
-Collaborators:
-
-WaitlistHandler
-
-Customer
+Collaborators: WaitlistHandler, Customer
 
 
 Class: WaitlistHandler
@@ -57,13 +51,7 @@ Add customer to wait list
 
 Remove customer from wait list
 
-Collaborators:
-
-ReservationHandler
-
-TableQueueHandler
-
-Customer
+Collaborators:ReservationHandler, TableQueueHandler, Customer
 
 
 Class: TableQueueHandler
@@ -76,11 +64,7 @@ Call next handler in the chain
 
 Provide size of best next available table
 
-Collaborators:
-
-WaitlistHandler
-
-TableHandler
+Collaborators: WaitlistHandler, TableHandler
 
 
 Class: TableHandler
@@ -93,8 +77,4 @@ Notify TableQueueHandler if Table empty
 
 Book Table and notify once table filled
 
-Collaborators:
-
-WaitlistManager
-
-TableQueueHandler
+Collaborators: WaitlistManager,TableQueueHandler
