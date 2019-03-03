@@ -8,11 +8,9 @@ Class : WaitlistHandler
 Chain of Responsibility
 Here, we want more than one object to be able to have an opportunity to handle request. Also it would be decided on run-time which object needs to be created.
 
-Class : TableQueueHandler, TableHandler, ReservationHandler
+Class : TableQueueHandler, TableHandler, ReservationHandler<br><br><br>
 
-CRC Cards
-
-
+CRC Cards<br><br>
 Class: Customer
 
 Responsibilities:
@@ -23,8 +21,7 @@ Be able to send and receive Messages
 
 Confirm or leave - messages
 
-Collaborators: ReservationHandler
-
+Collaborators: ReservationHandler<br><br>
 
 Class: ReservationHandler
 
@@ -36,8 +33,7 @@ Maintain direct contact with customers
 
 Send and receive message to/from customer
 
-Collaborators: WaitlistHandler, Customer
-
+Collaborators: WaitlistHandler, Customer<br><br>
 
 Class: WaitlistHandler
 
@@ -51,8 +47,7 @@ Add customer to wait list
 
 Remove customer from wait list
 
-Collaborators:ReservationHandler, TableQueueHandler, Customer
-
+Collaborators:ReservationHandler, TableQueueHandler, Customer<br><br>
 
 Class: TableQueueHandler
 
@@ -64,7 +59,7 @@ Call next handler in the chain
 
 Provide size of best next available table
 
-Collaborators: WaitlistHandler, TableHandler
+Collaborators: WaitlistHandler, TableHandler<br><br>
 
 
 Class: TableHandler
