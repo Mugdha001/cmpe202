@@ -13,8 +13,8 @@ It is maintained in a collection.
 This collection is iterated in the sequence in which items were requested.
 
 ## PackingSlip:  
-The Slip is printed in a predetermined manner as set by Five Guys Burger 
-The Packing Slip is generated to encompass the layering used in the burger shop
+The Slip is printed in a predetermined manner as set by Five Guys Burger. 
+The Packing Slip is generated to encompass the layering used in the burger shop.
  - Top bun toppings  
  - Bottom bun toppings  
  - Meat 
