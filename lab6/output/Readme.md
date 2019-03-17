@@ -19,3 +19,41 @@ The Packing Slip is generated to encompass the layering used in the burger shop.
  - Bottom bun toppings  
  - Meat 
  
+ Output as seen in console:
+ 
+ 
+Displaying Receipt..
+03/12/2019    1:46:54 PM
+Order Number 45
+LBB			5.59
+{{{{ Bacon}}}}
+Lettuce
+Tomato
+->| G Onion
+->| JALA Grilled
+
+
+LTL CAJ			2.79
+
+
+Sub. Total:		8.379999999999999
+
+
+Displaying Packing Slip..
+12/12/2016    1:46:54 PM
+Order Number 45
+LBB
+Lettuce
+Tomato
+->| G Onion
+->| JALA Grilled
+{{{{ Bacon}}}}
+
+
+LTL CAJ
+
+
+
+Process finished with exit code 0
+
+ 
