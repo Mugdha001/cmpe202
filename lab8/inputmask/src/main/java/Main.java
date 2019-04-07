@@ -10,21 +10,24 @@
 */
 
 
-import java.io.Console ;
+import java.util.Scanner;
 
 class Main
 {
     public static void main(String args[])
     {
         App app = new App() ;
-        Console c = System.console() ;
+        //Console c = System.console() ;
         for (;;) {
             System.out.print("\033[H\033[2J") ; // clear the screen
             System.out.flush() ;
             System.out.println( app.display() ) ;
-            System.out.print( "Key (Digit or X or Delete) => " ) ;
-            String ch = c.readLine() ;
-            app.key( ch ) ;
+            System.out.print( "Key (Digit or X to Delete) => " ) ;
+           
+            @SuppressWarnings("resource")
+			Scanner ch = new Scanner(System.in) ;
+            String cmd = ch.nextLine();
+            app.key( cmd ) ;
         }
     }
 }

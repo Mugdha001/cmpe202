@@ -10,16 +10,20 @@ public class App {
     private CreditCardExp exp;
     private CreditCardCVC cvc;
     private int count;
-
+    private CreditCardNumDecorator numberDecorator;
+    private CreditCardExpDecorator expDecorator;
+    
     public App() {
 
         screen = new Screen();
         num = new CreditCardNum();
         exp = new CreditCardExp();
         cvc = new CreditCardCVC();
+        numberDecorator = new CreditCardNumDecorator(num);
+        expDecorator = new CreditCardExpDecorator(exp);
 
-        screen.addSubComponent(num);
-        screen.addSubComponent(exp);
+        screen.addSubComponent(numberDecorator);
+        screen.addSubComponent(expDecorator);
         screen.addSubComponent(cvc);
 
         count = 0;
@@ -39,7 +43,10 @@ public class App {
     }
 
     public void key(String ch) {
-        count++;
+    	if("X".equals(ch) && count > 1)
+    		count--;
+    	else if(!"X".equals(ch))
+    		count++;
         screen.key(ch, count);
     }
 
